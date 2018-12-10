@@ -1,4 +1,4 @@
-package com.wing.chap02;
+package io.miaoji.flink.algorithms.chap02;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.ReduceFunction;
