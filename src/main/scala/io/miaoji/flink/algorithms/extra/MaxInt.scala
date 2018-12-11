@@ -7,7 +7,7 @@ import org.apache.flink.streaming.api.functions.source.FileProcessingMode
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.assigners._
 import org.apache.flink.streaming.api.windowing.time.Time
-import org.apache.flink.streaming.api.windowing.triggers.{ProcessingTimeTrigger, Trigger}
+import org.apache.flink.streaming.api.windowing.triggers.{CountTrigger, ProcessingTimeTrigger, Trigger}
 
 /**
   * 当前用户 : wing。
@@ -31,19 +31,24 @@ object MaxInt {
 
     fileStream
       // 120 3aW
+      // 按空格分割然后打平
       .flatMap(_.split(" "))
       // 120或者3aw
+      // 只要数字
       .filter((str: String) =>
         str.matches("[0-9]{3}")
       )
+      // 加1是为了把数字变成元祖
       .map((str: String) =>
         ("1",str.toInt)
       )
       .keyBy(0)
       .windowAll(GlobalWindows.create())
-      .trigger(ProcessingTimeTrigger.create())
+      .trigger(CountTrigger.of(1))
       .max(1)
+      .setParallelism(1)
       .print()
+      .setParallelism(1)
 
     env.execute()
   }
