@@ -1,18 +1,16 @@
-package io.miaoji.flink.algorithms
+package io.miaoji.flink.algorithms.scala.extra
 
-import io.miaoji.flink.algorithms.extra.window.GlobalIntWindows
 import org.apache.flink.api.java.io.TextInputFormat
 import org.apache.flink.core.fs.Path
 import org.apache.flink.streaming.api.functions.source.FileProcessingMode
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.api.windowing.assigners._
-import org.apache.flink.streaming.api.windowing.time.Time
-import org.apache.flink.streaming.api.windowing.triggers.{CountTrigger, ProcessingTimeTrigger, Trigger}
+import org.apache.flink.streaming.api.windowing.assigners.GlobalWindows
+import org.apache.flink.streaming.api.windowing.triggers.CountTrigger
 
 /**
   * 当前用户 : wing。
   * 当前日期 : 2018/12/9。
-  * 包名 : io.miaoji.flink.algorithms.extra。
+  * 包名 : io.miaoji.flink.algorithms.scala.extra。
   * 当前时间 : 11:18 PM。
   */
 object MaxInt {

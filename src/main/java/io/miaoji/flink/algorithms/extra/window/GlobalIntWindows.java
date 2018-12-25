@@ -3,7 +3,7 @@ package io.miaoji.flink.algorithms.extra.window;
 /**
  * 当前用户 : wing。
  * 当前日期 : 2018/12/10。
- * 包名 : io.miaoji.flink.algorithms.extra.window。
+ * 包名 : io.miaoji.flink.algorithms.scala.extra.window。
  * 当前时间 : 12:00 AM。
  */
 /*

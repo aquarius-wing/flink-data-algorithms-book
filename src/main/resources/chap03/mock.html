@@ -1,0 +1,30 @@
+<script src="http://requirejs.org/docs/release/2.1.16/comments/require.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    // 配置 Mock 路径
+    require.config({
+        paths: {
+            mock: 'http://mockjs.com/dist/mock'
+        }
+    })
+
+    // 加载 Mock
+    require(['mock'], function(Mock) {
+        // Mock.mock( template )
+        var data = Mock.mock({
+            'list|100': [{
+                'num|1-50': 1
+            }]
+        });
+        var text = "";
+        for (var i = 0; i < data.list.length; i++) {
+            var item = data.list[i];
+            text += item.num + ",cat"+item.num+",cat"+item.num+ "\n"
+        }
+        $('<pre>').text(text)
+            .appendTo('body')
+
+
+    })
+
+</script>
