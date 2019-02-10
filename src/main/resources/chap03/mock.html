@@ -13,13 +13,14 @@
         // Mock.mock( template )
         var data = Mock.mock({
             'list|100': [{
-                'num|1-50': 1
+                'id|+1':1,
+                'weight|1-200': 1
             }]
         });
         var text = "";
         for (var i = 0; i < data.list.length; i++) {
             var item = data.list[i];
-            text += item.num + ",cat"+item.num+",cat"+item.num+ "\n"
+            text += "cat"+item.id+","+item.weight+ "\n"
         }
         $('<pre>').text(text)
             .appendTo('body')
