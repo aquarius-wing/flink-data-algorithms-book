@@ -13,7 +13,7 @@ object OrderInversion {
 
   val INPUT_FILE_NAME = "chap05/input.txt"
   val OUTPUT_FILE_NAME = "chap05/output.txt"
-  val dir = LeftOuterJoin.getClass.getClassLoader.getResource("")
+  val dir = OrderInversion.getClass.getClassLoader.getResource("")
 
   def main(args: Array[String]): Unit = {
     val env = ExecutionEnvironment.getExecutionEnvironment
