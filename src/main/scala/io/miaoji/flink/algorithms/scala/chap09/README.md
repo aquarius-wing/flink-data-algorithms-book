@@ -1,5 +1,5 @@
 # 原文
-[Find Common Friends](https://github.com/mahmoudparsian/data-algorithms-book/tree/master/src/main/java/org/dataalgorithms/chap08)
+[Recommend System](https://github.com/mahmoudparsian/data-algorithms-book/tree/master/src/main/java/org/dataalgorithms/chap09)
 
 # 输入示例
-[input.csv](./../../../../resources/chap08/input.csv)
+[input.csv](./../../../../resources/chap09/input.csv)
